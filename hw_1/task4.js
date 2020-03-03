@@ -1,8 +1,6 @@
 let credits = 23580;
 let pricePerDroid = 3000;
-let howManyDroidsToBuy = Number(
-  prompt("Склько дроидов Вы хотите купить", "1-9999*")
-);
+let howManyDroidsToBuy = Number(prompt("Склько дроидов Вы хотите купить"));
 let totalPrise = pricePerDroid * howManyDroidsToBuy;
 let reminder = credits - totalPrise;
 if (howManyDroidsToBuy === 0) {
