@@ -110,9 +110,7 @@ console.log("Task 3:", getUsersWithGender(users, "male")); // [ 'Moore Hensley',
 // =====TASK 4=====
 //Получить массив только неактивных пользователей (поле isActive).
 const getInactiveUsers = (users) =>
-  users
-    .filter((filteredUsers) => filteredUsers.isActive !== true)
-    .map((filteredUsers) => filteredUsers.name);
+  users.filter((filteredUsers) => filteredUsers.isActive !== true);
 console.log("Task 4:", getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 // =====TASK 5======
@@ -135,8 +133,8 @@ console.log("Task 6:", getUsersWithAge(users, 30, 40)); // [объект Moore H
 //Получить общую сумму баланса (поле balance) всех пользователей.
 const calculateTotalBalance = (users) =>
   users
-    .map((users) => users.balance)
-    .reduce((acc, nextValue) => acc + nextValue);
+    // .map((users) => users.balance)
+    .reduce((acc, current) => acc + current.balance, 0);
 console.log("Task 7:", calculateTotalBalance(users)); // 20916
 
 // TASK 8
