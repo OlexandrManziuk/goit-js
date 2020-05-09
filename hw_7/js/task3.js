@@ -20,11 +20,11 @@ const images = [
   },
 ];
 
-const imagesForGallery = images
-  .map(
-    (image) =>
-      `<li class = "gallery__item"><img class = "gallery__item-img" src = "${image.url}" alt = "${image.alt}"/></li>`
-  )
-  .join("");
+const imagesForGallery = images.reduce(
+  (acc, image) =>
+    `<li class = "gallery__item"><img class = "gallery__item-img" src = "${image.url}" alt = "${image.alt}"/></li>` +
+    acc,
+  0
+);
 gallery.insertAdjacentHTML("beforebegin", imagesForGallery);
 console.log(imagesForGallery);
