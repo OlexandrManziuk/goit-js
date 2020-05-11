@@ -1,13 +1,14 @@
 "use strict";
 
 const input = document.querySelector("#validation-input");
-const data = input.dataset.length;
+const dataSettedLength = Number(input.getAttribute("data-length"));
 
 function checkInputLength(event) {
-  if (event.currentTarget.value.length === Number(data)) {
-    input.classList.replace("invalid", "valid") || input.classList.add("valid");
+  if (event.target.value.length === dataSettedLength) {
+    input.setAttribute("class", "valid");
   } else {
-    input.classList.add("invalid");
+    input.setAttribute("class", "invalid");
   }
 }
+
 input.addEventListener("change", checkInputLength);
